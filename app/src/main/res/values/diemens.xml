@@ -4,4 +4,7 @@
     <dimen name="N_Height">80sp</dimen>
     <dimen name="Text_Size">20sp</dimen>
     <dimen name="Text_Size_Top">35sp</dimen>
+    <dimen name="L_Width">95sp</dimen>
+    <dimen name="L_Height">50sp</dimen>
+    <dimen name="Dot_size">35sp</dimen>
 </resources>
