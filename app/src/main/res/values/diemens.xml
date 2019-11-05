@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="N_Width">102sp</dimen>
+    <dimen name="N_Height">80sp</dimen>
+    <dimen name="Text_Size">20sp</dimen>
+    <dimen name="Text_Size_Top">35sp</dimen>
+</resources>

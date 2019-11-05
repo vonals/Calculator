@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:rowCount="8"
+    android:columnCount="8"
+    android:layout_gravity="center"
+    android:orientation="horizontal">
+    <EditText
+        android:id="@+id/contentText"
+        android:layout_width="match_parent"
+        android:layout_columnSpan="8"
+        android:layout_height="100sp"
+        android:layout_gravity="fill"
+        android:layout_marginTop="20sp"
+        android:paddingTop="10sp"
+        android:paddingRight="15sp"
+        android:paddingLeft="15sp"
+        android:gravity="end|bottom"
+        android:typeface="sans"
+        />
+
+    <Button
+        android:id="@+id/tt1"
+        android:layout_row="1"
+        android:layout_column="0" />
+
+    <Button
+        android:id="@+id/tt2"
+        android:layout_row="1"
+        android:layout_column="1" />
+    <Button
+        android:id="@+id/tt3"
+        android:layout_row="1"
+        android:layout_column="2" />
+    <Button
+        android:id="@+id/tt4"
+        android:layout_row="1"
+        android:layout_column="3" />
+
+    <Button
+        android:id="@+id/tt5"
+        android:layout_row="1"
+        android:layout_column="4" />
+    <Button
+        android:id="@+id/tt7"
+        android:layout_row="1"
+        android:layout_column="5" />
+    <Button
+        android:id="@+id/tt8"
+        android:layout_row="1"
+        android:layout_column="6" />
+    <Button
+        android:id="@+id/tt9"
+        android:layout_row="1"
+        android:layout_column="7" />
+    <Button
+        android:id="@+id/tt25"
+        android:layout_row="2"
+        android:layout_column="4" />
+    <Button
+        android:id="@+id/tt27"
+        android:layout_row="2"
+        android:layout_column="5" />
+    <Button
+        android:id="@+id/tt28"
+        android:layout_row="2"
+        android:layout_column="6" />
+    <Button
+        android:id="@+id/tt29"
+        android:layout_row="2"
+        android:layout_column="7" />
+    <Button
+        android:id="@+id/tt35"
+        android:layout_row="3"
+        android:layout_column="4" />
+    <Button
+        android:id="@+id/tt37"
+        android:layout_row="3"
+        android:layout_column="5" />
+    <Button
+        android:id="@+id/tt38"
+        android:layout_row="3"
+        android:layout_column="6" />
+    <Button
+        android:id="@+id/tt39"
+        android:layout_row="3"
+        android:layout_column="7" />
+    <Button
+        android:id="@+id/tt45"
+        android:layout_row="4"
+        android:layout_column="4" />
+    <Button
+        android:id="@+id/tt47"
+        android:layout_row="4"
+        android:layout_column="5" />
+    <Button
+        android:id="@+id/tt48"
+        android:layout_row="4"
+        android:layout_column="6" />
+    <Button
+        android:id="@+id/tt49"
+        android:layout_row="4"
+        android:layout_column="7" />
+    <Button
+        android:id="@+id/tt55"
+        android:layout_row="5"
+        android:layout_column="4" />
+    <Button
+        android:id="@+id/tt57"
+        android:layout_row="5"
+        android:layout_column="5" />
+    <Button
+        android:id="@+id/tt58"
+        android:layout_row="5"
+        android:layout_column="6" />
+    <Button
+        android:id="@+id/tt59"
+        android:layout_row="5"
+        android:layout_column="7" />
+    <Button
+        android:id="@+id/tt65"
+        android:layout_row="6"
+        android:layout_column="4" />
+    <Button
+        android:id="@+id/tt67"
+        android:layout_row="6"
+        android:layout_column="5" />
+    <Button
+        android:id="@+id/tt68"
+        android:layout_row="6"
+        android:layout_column="6" />
+    <Button
+        android:id="@+id/tt69"
+        android:layout_row="6"
+        android:layout_column="7" />
+</GridLayout>

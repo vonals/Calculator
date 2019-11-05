@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="app_bt_sin">sin</string>
+    <string name="app_bt_cos">cos</string>
+    <string name="app_bracket_right">)</string>
+    <string name="app_bracket_left">(</string>
+    <string name="app_AC">AC</string>
+    <string name="app_div">/</string>
+    <string name="app_multi">x</string>
+    <string name="app_delete">delete</string>
+    <string name="app_num7">7</string>
+    <string name="app_num8">8</string>
+    <string name="app_num9">9</string>
+    <string name="app_dec">—</string>
+    <string name="app_num4">4</string>
+    <string name="app_num5">5</string>
+    <string name="app_num6">6</string>
+    <string name="app_add">+</string>
+    <string name="app_num1">1</string>
+    <string name="app_num2">2</string>
+    <string name="app_num3">3</string>
+    <string name="app_equal">=</string>
+    <string name="app_div100"> </string>
+    <string name="app_num0">0</string>
+    <string name="app_dot">.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
