@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @SuppressLint("SetTextI18n")
     @Override
     public void onClick(View view){
+
         switch(view.getId()){
             //sin
             case R.id.bt_sin:
@@ -365,9 +366,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         count_negative = 0;
                         try {
                             Log.d("EqualCh1","TRY: "+sb);
+                            //调用函数中缀转后缀并计算
                             textview.setText(InfixToSufix.Cal(InfixToSufix.Sufix(sb)));
                             sb = sb.delete(0, sb.length());
                             sb.append(textview.getText().toString());
+                            //进制转换
+                            int temp=Integer.parseInt(textview.getText().toString());
+                            TextView textViewHEX=findViewById(R.id.HEX_Text);
+                            textViewHEX.setText("HEX:"+Integer.toHexString(temp));
+                            TextView textViewOCT=findViewById(R.id.OCT_Text);
+                            textViewOCT.setText("OCT:"+Integer.toOctalString(temp));
+                            TextView textViewBIN=findViewById(R.id.BIN_Text);
+                            textViewBIN.setText("BIN:"+Integer.toBinaryString(temp));
                         } catch (Exception e) {
                             textview.setText("Error");
 //                            Log.d("EqualCh1",e.getMessage());
@@ -375,6 +385,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                     }
                 }
+
                 break;
             //百分号
             case R.id.bt_div100:

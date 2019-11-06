@@ -13,30 +13,42 @@
         android:layout_height="100sp"
         android:layout_gravity="fill"
         android:layout_marginTop="5sp"
+        android:layout_marginRight="70sp"
+        android:layout_marginEnd="70sp"
         android:paddingTop="10sp"
         android:paddingRight="15sp"
         android:paddingLeft="15sp"
+        android:textSize="30sp"
         android:gravity="end|bottom"
         android:typeface="sans"
         />
 
-    <Button
-        android:id="@+id/tt1"
+    <EditText
+        android:id="@+id/HEX_Text"
+        android:layout_width="@dimen/D_Width"
+        android:layout_columnSpan="4"
+        android:text="HEX:"
         android:layout_row="1"
-        android:layout_column="0" />
+        android:layout_column="0"
+        />
+    <EditText
+        android:id="@+id/OCT_Text"
+        android:layout_width="@dimen/D_Width"
+        android:layout_columnSpan="4"
+        android:text="OCT:"
+        android:layout_row="2"
+        android:layout_column="0"
+        />
+    <EditText
+        android:id="@+id/BIN_Text"
+        android:layout_width="@dimen/D_Width"
+        android:layout_columnSpan="4"
+        android:text="BIN:"
+        android:layout_row="3"
+        android:layout_column="0"
+        />
 
-    <Button
-        android:id="@+id/tt2"
-        android:layout_row="1"
-        android:layout_column="1" />
-    <Button
-        android:id="@+id/tt3"
-        android:layout_row="1"
-        android:layout_column="2" />
-    <Button
-        android:id="@+id/tt4"
-        android:layout_row="1"
-        android:layout_column="3" />
+
 
     <Button
         android:id="@+id/bt_sin"
@@ -206,7 +218,6 @@
         android:layout_width="@dimen/L_Width"
         android:textSize="@dimen/Text_Size"
         android:textStyle="bold"
-        android:layout_gravity="fill"
         android:textColor="@color/royalblue"
         android:background="@color/aliceblue"
         android:layout_row="4"
