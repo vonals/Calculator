@@ -3,6 +3,8 @@ package com.example.calculator;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
+import android.media.VolumeShaper;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.*;
@@ -370,14 +372,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             textview.setText(InfixToSufix.Cal(InfixToSufix.Sufix(sb)));
                             sb = sb.delete(0, sb.length());
                             sb.append(textview.getText().toString());
+                            //横屏判断
+                            Configuration mConfiguration = this.getResources().getConfiguration();
+                            int ori=mConfiguration.orientation;
                             //进制转换
-                            int temp=Integer.parseInt(textview.getText().toString());
-                            TextView textViewHEX=findViewById(R.id.HEX_Text);
-                            textViewHEX.setText("HEX:"+Integer.toHexString(temp));
-                            TextView textViewOCT=findViewById(R.id.OCT_Text);
-                            textViewOCT.setText("OCT:"+Integer.toOctalString(temp));
-                            TextView textViewBIN=findViewById(R.id.BIN_Text);
-                            textViewBIN.setText("BIN:"+Integer.toBinaryString(temp));
+                            if(ori == mConfiguration.ORIENTATION_LANDSCAPE) {
+                                int temp = Integer.parseInt(textview.getText().toString());
+                                TextView textViewHEX = findViewById(R.id.HEX_Text);
+                                textViewHEX.setText("HEX:" + Integer.toHexString(temp));
+                                TextView textViewOCT = findViewById(R.id.OCT_Text);
+                                textViewOCT.setText("OCT:" + Integer.toOctalString(temp));
+                                TextView textViewBIN = findViewById(R.id.BIN_Text);
+                                textViewBIN.setText("BIN:" + Integer.toBinaryString(temp));
+                            }
                         } catch (Exception e) {
                             textview.setText("Error");
 //                            Log.d("EqualCh1",e.getMessage());
@@ -389,8 +396,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             //百分号
             case R.id.bt_div100:
-                sb.append("%");
-                textview.setText(sb.toString());
+
                 break;
             default:
                 break;
