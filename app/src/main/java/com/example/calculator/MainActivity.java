@@ -402,13 +402,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             int ori=mConfiguration.orientation;
                             //进制转换
                             if(ori == mConfiguration.ORIENTATION_LANDSCAPE) {
-                                int temp = Integer.parseInt(textview.getText().toString());
-                                TextView textViewHEX = findViewById(R.id.HEX_Text);
-                                textViewHEX.setText("HEX:" + Integer.toHexString(temp));
-                                TextView textViewOCT = findViewById(R.id.OCT_Text);
-                                textViewOCT.setText("OCT:" + Integer.toOctalString(temp));
-                                TextView textViewBIN = findViewById(R.id.BIN_Text);
-                                textViewBIN.setText("BIN:" + Integer.toBinaryString(temp));
+                                try {
+                                    int temp = Integer.parseInt(textview.getText().toString());
+                                    TextView textViewHEX = findViewById(R.id.HEX_Text);
+                                    textViewHEX.setText("HEX:" + Integer.toHexString(temp));
+                                    TextView textViewOCT = findViewById(R.id.OCT_Text);
+                                    textViewOCT.setText("OCT:" + Integer.toOctalString(temp));
+                                    TextView textViewBIN = findViewById(R.id.BIN_Text);
+                                    textViewBIN.setText("BIN:" + Integer.toBinaryString(temp));
+                                }catch(Exception e){
+                                    TextView textViewHEX = findViewById(R.id.HEX_Text);
+                                    textViewHEX.setText("HEX:" );
+                                    TextView textViewOCT = findViewById(R.id.OCT_Text);
+                                    textViewOCT.setText("OCT:");
+                                    TextView textViewBIN = findViewById(R.id.BIN_Text);
+                                    textViewBIN.setText("BIN:");
+                                }
                             }
                         } catch (Exception e) {
                             textview.setText("Error");
