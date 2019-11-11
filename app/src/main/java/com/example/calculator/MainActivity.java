@@ -1,7 +1,10 @@
 package com.example.calculator;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.media.VolumeShaper;
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button buttonPct = findViewById(R.id.bt_div100);
         Button buttonSin=findViewById(R.id.bt_sin);
         Button buttonCos=findViewById(R.id.bt_cos);
+        Button buttonHelp=findViewById(R.id.bt_help);
         textview=findViewById(R.id.contentText);
 
         button0.setOnClickListener(this);
@@ -77,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonPct.setOnClickListener(this);
         buttonSin.setOnClickListener(this);
         buttonCos.setOnClickListener(this);
+        buttonHelp.setOnClickListener(this);
     }
 
     private int count_negative = 0; //负数标记
@@ -90,6 +95,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view){
 
         switch(view.getId()){
+            //Help
+            case R.id.bt_help:
+                AlertDialog.Builder dialog=new AlertDialog.Builder(MainActivity.this);
+                dialog.setTitle("Help");
+                dialog.setMessage("这是个计算器，当你用到这个Help时说明你脑子坏了");
+                dialog.setCancelable(false);
+                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                dialog.setNegativeButton("CANCLE", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                dialog.show();
+                break;
             //sin
             case R.id.bt_sin:
                 if (equals) {
