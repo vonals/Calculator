@@ -71,25 +71,29 @@ public class InfixToSufix {
         for(String s:list){
             //不为数字时
             if ( s.equals("*") || s.equals("/") || s.equals("+") || s.equals("-") || s.equals("(") || s.equals(")")||s.equals("S")||s.equals("C") ) {
-                if(s.equals("(")){
-                Log.d("EqualCh1","这总到了吧");}
-                if(s.equals(")")){
-                    Log.d("EqualCh1","这也到了");}
                 //没元素时就直接加入
                 if(stack.size()==0){
+                    Log.d("EqualCh1","(1)最初的入栈"+s);
                     stack.push(s);
-                }else{//有元素时判断优先级决定下一步（ps:这里改优先级欧）
+                }else{
+                    //有元素时判断优先级决定下一步（ps:这里改优先级欧）
                     if(s.equals(")")){
                         Log.d("EqualCh1","不会没到这吧");
                         //防一波崩溃，避免空栈操作
                         if(!stack.empty()){
-                            while(!stack.peek().equals("(")){
+                            Log.d("EqualCh1","(3)进入if"+stack.peek()+"取值："+stack.peek().equals("(")+" 第二取值："+stack.peek().equals('('));
+                            while(!(stack.peek().equals("("))){
                                 Log.d("EqualCh1","不会进不了while吧");
                                 //出栈并add到结果里
                                result.add( stack.pop());
-                                if(stack.peek().equals("S")||stack.peek().equals("C")){
-                                    Log.d("EqualCh1","进S/C啦");
-                                    result.add(stack.pop());
+                                if (stack.empty()){//容错，不然会有EmptyStackException,见上面
+                                    break;
+                                }
+                                if(!stack.empty()) {
+                                    if (stack.peek().equals("S") || stack.peek().equals("C")) {
+                                        Log.d("EqualCh1", "进S/C啦");
+                                        result.add(stack.pop());
+                                    }
                                 }
                                 if(stack.empty()){
                                     break;
@@ -99,19 +103,26 @@ public class InfixToSufix {
                             if(!stack.empty()){
                                 if(stack.peek().equals("(")){
                                     stack.pop();
+                                    Log.d("EqualCh1","掉了没");
                                 }
-                                if(stack.peek().equals("S")||stack.peek().equals("C")){
-                                    result.add(stack.pop());
-                                    Log.d("EqualCh1","进第二个S/C啦");
+                                if(!stack.empty()) {
+                                    if (stack.peek().equals("S") || stack.peek().equals("C")) {
+                                        result.add(stack.pop());
+                                        Log.d("EqualCh1", "进第二个S/C啦");
+                                    }
                                 }
                             }
                         }
                     }else{
+                        Log.d("EqualCh1","else入了12血");
                         if (s.equals("(")){ //如果是'('将其入栈
+                            Log.d("EqualCh1","入了12血");
                             stack.push(s);
                         }else{
                             if (stack.peek().charAt(0) != '(') {
+                                Log.d("EqualCh1","小一");
                                 if (map.get(s.charAt(0)) < map.get(stack.peek().charAt(0))) { //栈顶符号的优先级高于元素优先级，也就是数字小，进栈
+                                    Log.d("EqualCh1","in小一");
                                     stack.push(s);
                                 }else{
                                     //栈顶元素优先级低于当前元素，把低的全部输出
@@ -131,6 +142,7 @@ public class InfixToSufix {
                                     stack.push(s);
                                 }
                             }else{
+                                Log.d("EqualCh1","难道说");
                                 stack.push(s);
                             }
                         }
@@ -138,11 +150,13 @@ public class InfixToSufix {
                 }
             }else{
                 //是数字就直接加入
+                Log.d("EqualCh1","(2)添加数字"+s);
                 result.add(s);
             }
         }
         //最终都结束了就把栈里全pop了
         while(!stack.empty()){
+            Log.d("EqualCh1","难道说66");
             result.add(stack.pop());
         }
         for(int i=0;i<result.size();i++){

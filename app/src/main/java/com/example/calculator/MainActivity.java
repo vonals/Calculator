@@ -312,18 +312,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             //除法
             case R.id.bt_div:
+                if (equals) {
+                    equals = false;
+                }
                 if (sb.length() != 0) {
-                    if (sb.charAt(sb.length() - 1) >= '0' && sb.charAt(sb.length() - 1) <= '9') {
-                        sb.append("/");
+                    if ((sb.charAt(sb.length() - 1) >= '0' && sb.charAt(sb.length() - 1) <= '9') || sb.charAt(sb.length() - 1) == '.') {
+                        if ((sb.charAt(sb.length() - 1) >= '0' && sb.charAt(sb.length() - 1) <= '9')) {//如果前一位是数字，就直接添加
+                            sb = sb.append("/");
+                        }
+                        if (sb.charAt(sb.length() - 1) == '.') {//如果前一位是'.',就先为前一位数字补0
+                            sb = sb.append("0/");
+                        }
+                    }
+                    if ((sb.charAt(sb.length() - 1) == ')')) {
+                        sb = sb.append("/");
                     }
                 }
                 textview.setText(sb.toString());
                 break;
             //乘法
             case R.id.bt_multi:
+                if (equals) {
+                    equals = false;
+                }
                 if (sb.length() != 0) {
-                    if (sb.charAt(sb.length() - 1) >= '0' && sb.charAt(sb.length() - 1) <= '9') {
-                        sb.append("*");
+                    if ((sb.charAt(sb.length() - 1) >= '0' && sb.charAt(sb.length() - 1) <= '9') || sb.charAt(sb.length() - 1) == '.') {
+                        if ((sb.charAt(sb.length() - 1) >= '0' && sb.charAt(sb.length() - 1) <= '9')) {//如果前一位是数字，就直接添加
+                            sb = sb.append("*");
+                        }
+                        if (sb.charAt(sb.length() - 1) == '.') {//如果前一位是'.',就先为前一位数字补0
+                            sb = sb.append("0*");
+                        }
+                    }
+                    if ((sb.charAt(sb.length() - 1) == ')')) {
+                        sb = sb.append("*");
                     }
                 }
                 textview.setText(sb.toString());
